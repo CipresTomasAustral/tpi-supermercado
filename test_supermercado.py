@@ -187,3 +187,17 @@ class TestProcesar(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
+
+class TestCalculoImporteAdicional(unittest.TestCase):
+
+    def test_precio_decimal(self):
+        registros = [make_registro('SUC01', 'P100', '2025-01-01', 'PROV01', 4, 12.50)]
+        self.assertEqual(calcular_total_importe(registros), 50.0)
+
+    def test_unidades_acumuladas(self):
+        registros = [
+            make_registro('SUC01', 'P100', '2025-01-01', 'PROV01', 100, 10.0),
+            make_registro('SUC01', 'P100', '2025-01-02', 'PROV01', 200, 10.0),
+        ]
+        self.assertEqual(calcular_total_unidades(registros), 300)
