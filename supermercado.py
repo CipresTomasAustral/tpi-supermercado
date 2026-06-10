@@ -192,6 +192,9 @@ def imprimir_resultados(lineas_producto, lineas_sucursal, lineas_total):
 def main():
     path_csv = input("Indique el path del csv: ").strip()
 
+    if not path_csv:
+        print("Error: debe ingresar un path valido.")
+        return
     if not os.path.exists(path_csv):
         print(f"Error: el archivo '{path_csv}' no existe.")
         return
