@@ -43,7 +43,7 @@ def escribir_csv(registros, path):
 def calcular_total_importe(registros):
     total = 0.0
     for r in registros:
-        total += r['PRCANT'] * r['PRPRE']
+        total += r['PRCANT'] + r['PRPRE']
     return round(total, 2)
 
 
