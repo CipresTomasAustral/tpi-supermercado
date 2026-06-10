@@ -209,7 +209,7 @@ def main():
     elif ordenado == 'Y':
         registros = leer_csv(path_csv)
     else:
-        print("Opcion invalida. Debe ingresar Y o N.")
+        print("Opcion invalida. Debe ingresar Y para ordenado o N para desordenado.")
         return
 
     lineas_producto, lineas_sucursal, lineas_total = procesar(registros)
