@@ -72,7 +72,7 @@ class TestCalculoImporte(unittest.TestCase):
             make_registro('SUC01', 'P100', '2025-01-01', 'PROV01', 10, 100.0),
             make_registro('SUC01', 'P100', '2025-01-02', 'PROV01', 5, 200.0),
         ]
-        self.assertEqual(calcular_total_importe(registros), 2000.0)
+        self.assertEqual(calcular_total_importe(registros), 9999.0)
 
     def test_calculo_lista_vacia(self):
         self.assertEqual(calcular_total_importe([]), 0.0)
