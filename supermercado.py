@@ -2,7 +2,7 @@ import csv
 import os
 
 
-def bubble_sort(registros):
+def bubble_sort(registros):  # complejidad O(n^2)
     n = len(registros)
     for i in range(n - 1):
         for j in range(n - 1 - i):
