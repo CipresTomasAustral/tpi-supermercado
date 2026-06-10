@@ -1,51 +1,33 @@
-# TPI - Procesamiento de Compras Supermercado
+# TPI - Supermercado
 
-Sistema de procesamiento de compras de supermercado con pipeline de CI/CD usando GitHub Actions.
+Hola profe, este es el trabajo integrador.
 
-## Descripcion
+El sistema procesa un archivo CSV con compras de sucursales y genera estadisticas por producto, por sucursal y totales generales. Tiene un algoritmo de ordenamiento burbuja propio para ordenar el archivo en caso de que no este ordenado.
 
-El sistema lee un archivo CSV con registros de compras de sucursales y genera estadisticas por producto, por sucursal y totales generales. Incluye un algoritmo de ordenamiento burbuja propio para ordenar el archivo si es necesario.
+## Archivos
 
-## Estructura del proyecto
+- `supermercado.py` - logica principal
+- `test_supermercado.py` - pruebas unitarias
+- `COMPRAS_supermercado.csv` - archivo de datos
+- `requirements.txt` - dependencias
 
-```
-tpi-supermercado/
-├── supermercado.py
-├── test_supermercado.py
-├── requirements.txt
-└── README.md
-```
+## Formato del CSV
 
-## Formato del archivo CSV
+- PRSUC: sucursal
+- PRCOD: codigo de producto
+- PRFEC: fecha de compra
+- PRPROV: proveedor
+- PRCANT: cantidad comprada
+- PRPRE: precio unitario
 
-| Campo  | Descripcion              |
-|--------|--------------------------|
-| PRSUC  | Codigo de sucursal       |
-| PRCOD  | Codigo de producto       |
-| PRFEC  | Fecha de compra          |
-| PRPROV | Proveedor                |
-| PRCANT | Cantidad comprada        |
-| PRPRE  | Precio unitario          |
-
-## Uso
-
-```bash
-python supermercado.py
-```
-
-El programa solicita el path del archivo CSV y si ya esta ordenado (Y/N). Si no esta ordenado aplica bubble sort y genera un archivo `_ordenado.csv`.
-
-## Resultados generados
-
-- Por producto: TOTUNI (total unidades), TOTPES (total en pesos)
-- Por sucursal: TOTSUC, MYPROD/MYIMPOR (mayor compra), MNPROD/MNIMPOR (menor compra)
-- Totales: CANSUC (cantidad sucursales), TOTALIMP (importe total general)
-
-## Instalacion
+## Como ejecutar
 
 ```bash
 pip install -r requirements.txt
+python supermercado.py
 ```
+
+Pide el path del CSV y si el archivo ya esta ordenado (Y/N). Si no esta ordenado genera un archivo nuevo ordenado y trabaja desde ese.
 
 ## Tests
 
